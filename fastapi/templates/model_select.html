@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Selection Page</title>
+</head>
+<body>
+    <h1>Select Model</h1>
+    <form method="post" action="/model_select/">
+        <label for="data_train_csv">Upload Data CSV:</label>
+        <input type="file" name="data_train_csv" id="data_train_csv" required><br>
+        <label for="label_train_csv">Upload Label CSV:</label>
+        <input type="file" name="label_train_csv" id="label_train_csv" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

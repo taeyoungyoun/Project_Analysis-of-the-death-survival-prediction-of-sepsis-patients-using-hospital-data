@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Input Page</title>
+</head>
+<body>
+    <h1>Upload Data for Prediction</h1>
+    <form method="post" action="/data_input/">
+        <label for="data_file">Upload Data CSV:</label>
+        <input type="file" name="data_file" id="data_file" required><br>
+        <label for="label_file">Upload Label CSV:</label>
+        <input type="file" name="label_file" id="label_file" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 이전 스타일 및 메타 태그 생략 -->
+
+    <style>
+        /* 이전 스타일 코드 생략 */
+
+        /* 추가된 스타일: 결과 데이터 출력 테이블 스타일 수정 */
+        .output-section {
+            margin-top: 40px;
+            width: 100%;
+            background-color: #0077B6;
+            padding: 20px;
+            display: flex;
+            flex-direction: row-reverse; /* 수정: 결과 데이터를 오른쪽에 배치 */
+            align-items: flex-start; /* 그래프를 위쪽으로 정렬 */
+            gap: 20px;
+        }
+        /* 결과 데이터 출력 테이블 컨테이너 스타일 수정 */
+        .output-table-container {
+            max-height: 600px; /* 수정: 결과 데이터 출력 창의 최대 높이 늘림 */
+            overflow-y: auto; /* 세로 스크롤이 필요한 경우 자동 스크롤 생성 */
+            flex: 3; /* 수정: 결과 데이터 출력 창이 3:7 비율로 나오도록 설정 */
+        }
+        /* 결과 데이터 출력 테이블 스타일 수정 */
+        .output-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .output-table th, .output-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #90E0EF;
+        }
+        .output-table th {
+            background-color: #90E0EF;
+            color: black;
+        }
+        .output-table td {
+            background-color: #CAF0F8;
+            color: black;
+        }
+        /* 추가된 스타일: 그래프 이미지 컨테이너 스타일 */
+        .output-plot-container {
+            flex: 7; /* 수정: 그래프 이미지 컨테이너가 7:3 비율로 나오도록 설정 */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 결과 데이터를 출력할 섹션을 추가합니다. -->
+    <div class="output-section">
+        <!-- 그래프 이미지 컨테이너 추가 -->
+        <div class="output-plot-container">
+	<h2>날짜 그래프</h2>
+            <img src="/static/result_plot.png" alt="그래프 이미지">
+        </div>
+
+        <!-- 결과 데이터 출력 테이블 컨테이너 추가 -->
+        <div class="output-table-container">
+            <h2>결과 데이터</h2>
+            <table class="output-table">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>위험도</th>
+                        <th>생존/사망</th>
+                    </tr>
+                </thead>
+                <tbody id="result-table-body">
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ row['위험도'] }}</td>
+                        <td>{{ row['생존/사망'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
