@@ -69,8 +69,7 @@ fastapi와 html을 활용해서 웹 어플리케이션을 구현했습니다. Fa
 
 
 
-
-
+더 자세한 내용 : https://www.taeyoung-portfolio.com/project/mimic%20%7C%7C%7C%20-%20data
 
 
 
